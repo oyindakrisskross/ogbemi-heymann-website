@@ -1,0 +1,3 @@
+Placeholder available works catalogue.
+
+Replace this file with the current collector catalogue before launch.

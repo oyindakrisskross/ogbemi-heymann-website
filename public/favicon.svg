@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ogbemi Heymann">
+  <rect width="64" height="64" fill="#f8f7f4"/>
+  <text
+    x="50%"
+    y="50%"
+    fill="#111111"
+    dominant-baseline="central"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="52"
+    text-anchor="middle"
+  >O</text>
+</svg>
