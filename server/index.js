@@ -49,6 +49,27 @@ app.get("/health", (_req, res) => res.json({ ok: true }));
 app.use("/api", publicRouter);
 app.use("/api/admin", adminRouter);
 
+if (config.isProduction) {
+  const distPath = path.resolve(__dirname, "../dist");
+  const indexPath = path.join(distPath, "index.html");
+
+  app.use(express.static(distPath));
+  app.use((req, res, next) => {
+    if (
+      req.method !== "GET" ||
+      req.path.startsWith("/api") ||
+      req.path.startsWith("/uploads") ||
+      req.path.startsWith("/downloads") ||
+      req.path === "/health"
+    ) {
+      next();
+      return;
+    }
+
+    res.sendFile(indexPath);
+  });
+}
+
 app.use((error, _req, res, _next) => {
   console.error(error);
   res.status(500).json({ error: error.message || "Internal server error" });

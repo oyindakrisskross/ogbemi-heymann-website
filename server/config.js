@@ -13,6 +13,7 @@ const clientOrigins = parseOriginList(process.env.CLIENT_ORIGIN);
 export const config = {
   port: Number(process.env.PORT || 4100),
   isDevelopment: process.env.NODE_ENV !== "production",
+  isProduction: process.env.NODE_ENV === "production",
   clientOrigin: clientOrigins[0] || "http://localhost:5173",
   clientOrigins: clientOrigins.length ? clientOrigins : ["http://localhost:5173"],
   authSecret: process.env.AUTH_SECRET || "dev-auth-secret-change-me",
