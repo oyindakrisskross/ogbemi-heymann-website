@@ -140,7 +140,7 @@ sudo apt install -y git docker.io docker-compose-plugin nginx certbot python3-ce
 sudo usermod -aG docker $USER
 ```
 
-Log out and back in after adding the user to the `docker` group.
+Log out and back in after adding the user to the `docker` group..
 
 Clone the repository on the VPS and create `.env`:
 
